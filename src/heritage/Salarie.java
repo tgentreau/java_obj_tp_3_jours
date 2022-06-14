@@ -15,4 +15,14 @@ public class Salarie extends Individu{
     public void setSalaire(int salaire) {
         this.salaire = salaire;
     }
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("Salarie{");
+        sb.append("prenom='").append(prenom).append('\'');
+        sb.append(", nom='").append(nom).append('\'');
+        sb.append(", salaire=").append(salaire);
+        sb.append('}');
+        return sb.toString();
+    }
 }

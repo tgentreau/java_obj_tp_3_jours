@@ -1,8 +1,8 @@
 package heritage;
 
 public class Individu {
-    private String prenom;
-    private String nom;
+    protected String prenom;
+    protected String nom;
 
     public Individu(String prenom, String nom) {
         this.setPrenom(prenom);
