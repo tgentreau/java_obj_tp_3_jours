@@ -1,11 +1,11 @@
 package editeur;
 
 public class Client {
-    public String nom;
-    public String prenom;
-    public String adresse;
-    public int cp;
-    public String ville;
+    private String nom;
+    private String prenom;
+    private String adresse;
+    private int cp;
+    private String ville;
 
     public Client(String nom, String prenom, String adresse, int cp, String ville) {
         this.nom = nom;
@@ -57,7 +57,7 @@ public class Client {
 
     @Override
     public String toString() {
-        final StringBuffer sb = new StringBuffer("Client{");
+        final StringBuilder sb = new StringBuilder("Client{");
         sb.append("nom='").append(nom).append('\'');
         sb.append(", prenom='").append(prenom).append('\'');
         sb.append(", adresse='").append(adresse).append('\'');

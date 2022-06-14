@@ -1,14 +1,14 @@
 package editeur;
 
 public class Livre {
-    public String titre;
-    public String auteur;
-    public double prix;
-    public int nbrPage;
-    public String isbn;
-    public int annee;
+    private String titre;
+    private String auteur;
+    private double prix;
+    private int nbrPage;
+    private long isbn;
+    private int annee;
 
-    public Livre(String titre, String auteur, double prix, int nbrPage, String isbn, int annee) {
+    public Livre(String titre, String auteur, double prix, int nbrPage, long isbn, int annee) {
         this.titre = titre;
         this.auteur = auteur;
         this.prix = prix;
@@ -49,11 +49,11 @@ public class Livre {
         this.nbrPage = nbrPage;
     }
 
-    public String getIsbn() {
+    public long getIsbn() {
         return isbn;
     }
 
-    public void setIsbn(String isbn) {
+    public void setIsbn(long isbn) {
         this.isbn = isbn;
     }
 
