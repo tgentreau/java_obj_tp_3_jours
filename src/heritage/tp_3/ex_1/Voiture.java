@@ -8,7 +8,7 @@ public class Voiture {
     private String marque;
     private Color couleur;
     private int annee;
-    static private Individu propriaitaire;
+    private Individu propriaitaire;
 
     public Voiture(int num_serie, String immatriculation, String marque, Color couleur, int annee) {
         this.setNum_serie(num_serie);
