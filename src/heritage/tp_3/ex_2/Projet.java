@@ -19,10 +19,9 @@ public class Projet {
     }
 
     public double cumulCoutMO() {
-        Intervenant intervenant = new Intervenant("test", 11);
         double cout = 0;
         for (Mission mission : missions) {
-           cout += intervenant.getTauxHoraire() * mission.getNbrHeureEffectues();
+           cout += mission.getExecutant().getTauxHoraire() * mission.getNbrHeureEffectues();
         }
         return cout;
     }
