@@ -1,21 +1,25 @@
 package heritage.tp_4.ex_5;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 
 public class MiniExcursionPlanifiee{
-    private LocalDate heureDepart;
+    private LocalDateTime heureDepart;
     private int nbrInscrits;
     private MiniExcursion miniExcursion;
-    private String heureDepart2;
 
     public MiniExcursionPlanifiee(LocalDate heureDepart, int nbrInscrits, MiniExcursion miniExcursion) {
-        this.setHeureDepart(heureDepart);
+        this.setHeureDepart(LocalDateTime.of(heureDepart, LocalTime.of(8, 0)));
         this.setNbrInscrits(nbrInscrits);
         this.setMiniExcursion(miniExcursion);
     }
 
-    public MiniExcursionPlanifiee(String heureDepart2, int nbrInscrits, MiniExcursion miniExcursion) {
-        this.setHeureDepart2(heureDepart2);
+    public MiniExcursionPlanifiee(String heureDepart, int nbrInscrits, MiniExcursion miniExcursion) {
+        String[] tabHeureDepart = heureDepart.split("h");
+        int heure = Integer.parseInt(tabHeureDepart[0]);
+        int minute = Integer.parseInt(tabHeureDepart[1]);
+        this.setHeureDepart(LocalDateTime.of(LocalDate.now(), LocalTime.of(heure, minute)));
         this.setNbrInscrits(nbrInscrits);
         this.setMiniExcursion(miniExcursion);
     }
@@ -28,19 +32,11 @@ public class MiniExcursionPlanifiee{
         return complet;
     }
 
-    public String getHeureDepart2() {
-        return heureDepart2;
-    }
-
-    public void setHeureDepart2(String heureDepart2) {
-        this.heureDepart2 = heureDepart2;
-    }
-
-    public LocalDate getHeureDepart() {
+    public LocalDateTime getHeureDepart() {
         return heureDepart;
     }
 
-    public void setHeureDepart(LocalDate heureDepart) {
+    public void setHeureDepart(LocalDateTime heureDepart) {
         this.heureDepart = heureDepart;
     }
 

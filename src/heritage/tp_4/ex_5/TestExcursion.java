@@ -28,7 +28,7 @@ public class TestExcursion {
         lesMini.add(new MiniExcursionPlanifiee(LocalDate.now(),3, maMiniExc));
         lesMini.add(maMiniExcPlanifA);
         PlanningJournee monPlanningJournee=new PlanningJournee(LocalDate.now(),lesMini);
-        System.out.println("Le planning de lajournée :"+monPlanningJournee.getDate().format(DateTimeFormatter.ofPattern("dd/MM/yy"))+" aura pour excursion(s):");
+        System.out.println("Le planning de la journée :"+monPlanningJournee.getDate().format(DateTimeFormatter.ofPattern("dd/MM/yy"))+" aura pour excursion(s):");
         for(MiniExcursionPlanifiee miniExc : monPlanningJournee.getMiniExcursionPlanifiee()){
             System.out.println(miniExc.getMiniExcursion().getLibelleExcursion()+" a une durée égale à "+miniExc.getMiniExcursion().donneDureePrevueHHMM().format(DateTimeFormatter.ofPattern("HH:mm")));
         }

@@ -8,8 +8,12 @@ public class PlanningJournee {
     private LocalDate date;
     private List<MiniExcursionPlanifiee> miniExcursionPlanifiee = new ArrayList<>();
 
+
+
     public PlanningJournee(LocalDate date, List<MiniExcursionPlanifiee> miniExcursionPlanifiee) {
+
         this.setDate(date);
+        this.setMiniExcursionPlanifiee(miniExcursionPlanifiee);
     }
 
     public List<MiniExcursionPlanifiee> getMiniExcursionPlanifiee() {

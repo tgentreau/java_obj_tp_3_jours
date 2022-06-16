@@ -2,6 +2,7 @@ package heritage.tp_4.ex_5;
 
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
@@ -63,10 +64,12 @@ public class MiniExcursion {
         return donnee;
     }
 
-    public LocalDate donneDureePrevueHHMM() {
-        LocalDate date = LocalDate.parse(String.valueOf(donneDureePrevueHHMM()));
-        LocalDate newDate = LocalDate.parse(date.format(DateTimeFormatter.ofPattern("HH:mm:ss")));
-        return newDate;
+    public LocalTime donneDureePrevueHHMM() {
+        int duree = 0;
+        for (Etape etape : lesEtapes) {
+            duree += etape.getDureePrevue();
+        }
+        return LocalTime.ofSecondOfDay(duree * 60L);
     }
 
     @Override

@@ -37,7 +37,7 @@ public class Etape {
     }
 
     public LocalTime donneeDureePrevueHHMM() {
-        LocalTime time = LocalTime.parse(String.valueOf(dureePrevue));
+        LocalTime time = LocalTime.ofSecondOfDay(dureePrevue * 60L);
         return time;
     }
 
