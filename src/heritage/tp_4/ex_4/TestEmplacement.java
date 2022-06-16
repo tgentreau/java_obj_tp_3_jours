@@ -1,6 +1,6 @@
 package heritage.tp_4.ex_4;
 
-import java.awt.*;
+import java.awt.Color;
 
 public class TestEmplacement {
     public static void main(String[] args) {
