@@ -68,11 +68,11 @@ public class Affichage {
     }
 
     public void calculAireLosange() {
-        System.out.println("Quelle est la longueur de la diagonale A ?");
-        double diagonaleA = scanner.nextDouble();
-        System.out.println("Quelle est la longueur de la diagonale B ?");
-        double diagonaleB = scanner.nextDouble();
-        Losange losange = new Losange(diagonaleA, diagonaleB);
+        System.out.println("Quelle est la longueur de la base ?");
+        double base = scanner.nextDouble();
+        System.out.println("Quelle est la longueur de la hauteur ?");
+        double hauteur = scanner.nextDouble();
+        Losange losange = new Losange(base, hauteur);
         formes.add(losange);
         restart();
     }
@@ -92,8 +92,32 @@ public class Affichage {
             setUp();
         } else if(choixRestart == 2) {
             printForme();
+            choixCalculs();
         } else {
-            System.out.println("Mauvaise entrée");
+            System.err.println("Mauvaise entrée");
+        }
+    }
+
+    public void choixCalculs() {
+        System.out.println("Quels calculs souhaitez-vous connaître ?");
+        System.out.println("1- L'aire ?");
+        System.out.println("2- Le périmètre ?");
+        System.out.println("3- Les deux ?");
+        int choixCalculs = scanner.nextInt();
+        if(choixCalculs == 1) {
+            for (Forme forme : formes) {
+                System.out.println(forme.toString() + " Aire= " + forme.calculAire());
+            }
+        } else if(choixCalculs == 2){
+            for (Forme forme : formes) {
+                System.out.println(forme.toString() + " Périmètre= " + forme.calculPerimetre());
+            }
+        } else if(choixCalculs == 3) {
+            for (Forme forme : formes) {
+                System.out.println(forme.toString() + " Aire= " + forme.calculAire() + " Périmètre= " + forme.calculPerimetre());
+            }
+        } else {
+            System.err.println("Mauvaise entrée");
         }
     }
 }

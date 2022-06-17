@@ -17,7 +17,12 @@ public class Carre implements Forme{
 
     @Override
     public double calculAire() {
-        return cote * cote;
+        return getCote() * getCote();
+    }
+
+    @Override
+    public double calculPerimetre() {
+        return getCote() * 4;
     }
 
     @Override
@@ -25,7 +30,6 @@ public class Carre implements Forme{
         final StringBuilder sb = new StringBuilder("Carre{");
         sb.append("cote=").append(getCote());
         sb.append('}');
-        sb.append(" Aire= ").append(calculAire());
         return sb.toString();
     }
 }

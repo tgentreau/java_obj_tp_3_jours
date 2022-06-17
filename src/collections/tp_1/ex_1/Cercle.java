@@ -17,7 +17,12 @@ public class Cercle implements Forme{
 
     @Override
     public double calculAire() {
-        return (rayon * rayon) * Math.PI;
+        return (getRayon() * getRayon()) * Math.PI;
+    }
+
+    @Override
+    public double calculPerimetre() {
+        return 2 * Math.PI * getRayon();
     }
 
     @Override
@@ -25,7 +30,6 @@ public class Cercle implements Forme{
         final StringBuilder sb = new StringBuilder("Cercle{");
         sb.append("rayon=").append(getRayon());
         sb.append('}');
-        sb.append(" Aire= ").append(calculAire());
         return sb.toString();
     }
 }

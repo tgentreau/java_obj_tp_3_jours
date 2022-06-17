@@ -27,7 +27,12 @@ public class Triangle implements Forme{
 
     @Override
     public double calculAire() {
-        return (base * hauteur) / 2;
+        return (getBase() * getHauteur()) / 2;
+    }
+
+    @Override
+    public double calculPerimetre() {
+        return getBase() + getHauteur() + Math.sqrt(getBase() * getBase() + getHauteur() * getHauteur());
     }
 
     @Override
@@ -36,7 +41,6 @@ public class Triangle implements Forme{
         sb.append("base=").append(getBase());
         sb.append(", hauteur=").append(getHauteur());
         sb.append('}');
-        sb.append(" Aire= ").append(calculAire());
         return sb.toString();
     }
 }

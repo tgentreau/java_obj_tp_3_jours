@@ -27,7 +27,12 @@ public class Rectangle implements Forme{
 
     @Override
     public double calculAire() {
-        return largeur * longueur;
+        return getLargeur() * getLongueur();
+    }
+
+    @Override
+    public double calculPerimetre() {
+        return (2 * getLongueur()) + (2 * getLargeur());
     }
 
     @Override
@@ -36,7 +41,6 @@ public class Rectangle implements Forme{
         sb.append("longueur=").append(getLongueur());
         sb.append(", largeur=").append(getLargeur());
         sb.append('}');
-        sb.append(" Aire= ").append(calculAire());
         return sb.toString();
     }
 }

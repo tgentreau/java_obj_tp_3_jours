@@ -1,42 +1,46 @@
 package collections.tp_1.ex_1;
 
 public class Losange implements Forme{
-    private double diagonaleA;
-    private double diagonaleB;
+    private double base;
+    private double hauteur;
 
-    public Losange(double diagonaleA, double diagonaleB) {
-        this.setDiagonaleA(diagonaleA);
-        this.setDiagonaleB(diagonaleB);
+    public Losange(double base, double hauteur) {
+        this.setBase(base);
+        this.setHauteur(hauteur);
     }
 
-    public double getDiagonaleA() {
-        return diagonaleA;
+    public double getBase() {
+        return base;
     }
 
-    public void setDiagonaleA(double diagonaleA) {
-        this.diagonaleA = diagonaleA;
+    public void setBase(double base) {
+        this.base = base;
     }
 
-    public double getDiagonaleB() {
-        return diagonaleB;
+    public double getHauteur() {
+        return hauteur;
     }
 
-    public void setDiagonaleB(double diagonaleB) {
-        this.diagonaleB = diagonaleB;
+    public void setHauteur(double hauteur) {
+        this.hauteur = hauteur;
     }
 
     @Override
     public double calculAire() {
-        return (diagonaleA * diagonaleB) / 2;
+        return (getBase() * getHauteur()) / 2;
+    }
+
+    @Override
+    public double calculPerimetre() {
+        return getBase() + getHauteur() + Math.sqrt(getBase() * getBase() + getHauteur() * getHauteur());
     }
 
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("Losange{");
-        sb.append("diagonale A=").append(diagonaleA);
-        sb.append("diagonale B=").append(diagonaleB);
+        sb.append("base =").append(getBase());
+        sb.append("hauteur B=").append(getHauteur());
         sb.append('}');
-        sb.append(" Aire= ").append(calculAire());
         return sb.toString();
     }
 }
