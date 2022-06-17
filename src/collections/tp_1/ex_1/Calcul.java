@@ -18,19 +18,14 @@ public class Calcul {
         int choix = scanner.nextInt();
         if(choix == 1) {
             calculAireTriangle();
-            restart();
         } else if(choix == 2) {
             calculAireCarre();
-            restart();
         } else if(choix == 3) {
             calculAireRectangle();
-            restart();
         } else if(choix == 4) {
             calculAireCercle();
-            restart();
         } else if(choix == 5) {
             calculAireLosange();
-            restart();
         } else {
             System.out.println("Mauvaise entrée");
         }
@@ -43,6 +38,7 @@ public class Calcul {
         double hauteurTriangle = scanner.nextDouble();
         Triangle triangle = new Triangle(baseTriangle, hauteurTriangle);
         formes.add(triangle);
+        restart();
     }
 
     public void calculAireCarre() {
@@ -50,6 +46,7 @@ public class Calcul {
         double coteTriangle = scanner.nextDouble();
         Carre carre = new Carre(coteTriangle);
         formes.add(carre);
+        restart();
     }
 
     public void calculAireCercle() {
@@ -57,6 +54,7 @@ public class Calcul {
         double rayonCercle = scanner.nextDouble();
         Cercle cercle = new Cercle(rayonCercle);
         formes.add(cercle);
+        restart();
     }
 
     public void calculAireRectangle() {
@@ -66,6 +64,7 @@ public class Calcul {
         double largeurRectangle = scanner.nextDouble();
         Rectangle rectangle = new Rectangle(longueurRectangle, largeurRectangle);
         formes.add(rectangle);
+        restart();
     }
 
     public void calculAireLosange() {
@@ -75,6 +74,7 @@ public class Calcul {
         double diagonaleB = scanner.nextDouble();
         Losange losange = new Losange(diagonaleA, diagonaleB);
         formes.add(losange);
+        restart();
     }
 
     public void printForme() {
